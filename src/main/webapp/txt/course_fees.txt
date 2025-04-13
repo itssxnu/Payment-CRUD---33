@@ -1,0 +1,7 @@
+Java=2500
+Python=3000
+Web Development=4000
+C++=2000
+Machine Learning=5000
+Data Science=4500
+Cloud Computing=3500
