@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="java.util.Set" %>
-<%@ page import="java.util.Iterator" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,10 +17,13 @@
             if (courseFees != null && !courseFees.isEmpty()) {
                 for (Map.Entry<String, Double> entry : courseFees.entrySet()) {
         %>
+        <%
+            Double total = entry.getValue();
+        %>
         <div class="form-check mb-2">
             <input class="form-check-input" type="checkbox" name="courses" value="<%= entry.getKey() %>" id="<%= entry.getKey() %>">
             <label class="form-check-label" for="<%= entry.getKey() %>">
-                <%= entry.getKey() %> - <%= entry.getValue() %> LKR
+                <%= entry.getKey() %> - <%= String.format("%.2f", total) %> LKR
             </label>
         </div>
         <%

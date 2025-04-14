@@ -10,7 +10,12 @@
 <body class="bg-light">
 <div class="container my-5 text-center">
     <h2 class="text-success">Thank you, <%= request.getAttribute("name") %>!</h2>
-    <p>Your payment of ₹<%= request.getAttribute("amount") %> has been successfully processed.</p>
+
+    <%
+        Double total = (Double) request.getAttribute("amount");
+    %>
+
+    <p>Your payment of  <%= String.format("%.2f", total) %> LKR has been successfully processed.</p>
     <p>You will be redirected to your course dashboard shortly...</p>
 </div>
 </body>

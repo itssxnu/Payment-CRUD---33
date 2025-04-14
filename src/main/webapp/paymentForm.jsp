@@ -70,10 +70,13 @@
                 <input type="hidden" name="courses" value="<%= course %>">
                 <% } %>
 
-                <!-- Total Amount -->
+                <%
+                    Double total = (Double) request.getAttribute("totalAmount");
+                %>
                 <div class="mb-3 text-center">
-                    <h5>Total Amount: ₹<%= request.getAttribute("totalAmount") %></h5>
+                    <h5>Total Amount: <%= String.format("%.2f", total) %> LKR</h5>
                 </div>
+
 
                 <!-- Submit Button -->
                 <div class="d-flex justify-content-center">

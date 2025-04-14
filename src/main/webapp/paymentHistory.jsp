@@ -14,7 +14,6 @@
         <%
             List<String> list = (List<String>) request.getAttribute("paymentList");
             for (String record : list) {
-                // Extract last 4 digits of the card
                 String last4 = record.split("Card: \\*\\*\\*\\*")[1].split(",")[0].trim();
         %>
         <div class="list-group-item d-flex justify-content-between align-items-center">
