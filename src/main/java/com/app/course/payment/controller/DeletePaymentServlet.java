@@ -12,8 +12,11 @@ import java.io.IOException;
 public class DeletePaymentServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         String last4 = request.getParameter("cardLast4");
+
         PaymentUtil.deletePaymentByCard(last4);
+
         response.sendRedirect("viewPayments");
     }
 }

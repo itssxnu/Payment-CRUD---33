@@ -39,7 +39,7 @@ public class PaymentUtil {
 
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!line.contains("Card: ****" + last4Digits)) {  // Adjusted for format
+                if (!line.contains("Card: ****" + last4Digits)) {
                     writer.write(line);
                     writer.newLine();
                 }
@@ -48,7 +48,6 @@ public class PaymentUtil {
             e.printStackTrace();
         }
 
-        // Replace original file with temp
         if (inputFile.delete()) {
             tempFile.renameTo(inputFile);
         }

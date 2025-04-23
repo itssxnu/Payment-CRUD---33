@@ -59,12 +59,12 @@ public class Payment {
 
     @Override
     public String toString() {
-        String formattedAmount = String.format("%.2f", amount);
-        return "Name: " + name +
-                ", Courses: " + courses +
+        String formattedAmount = String.format("%.2f", getAmount());
+        return "Name: " + getName() +
+                ", Courses: " + getCourses() +
                 ", Amount: " + formattedAmount +
-                ", Card: ****" + cardNumber.substring(cardNumber.length() - 4) +
-                ", Status: " + status;
+                ", Card: ****" + getCardNumber().substring(getCardNumber().length() - 4) +
+                ", Status: " + getStatus();
     }
 }
 

@@ -1,0 +1,7 @@
+Name: Sanusha Dilmin, Courses: [Machine Learning], Amount: 5000.00, Card: ****1111, Status: Completed
+Name: Sanusha Dilmin, Courses: [C++, Machine Learning, Python], Amount: 10000.00, Card: ****4444, Status: Completed
+Name: Sanusha Dilmin
+ Courses: [Data Science]
+ Amount: 4500.00
+ Card: ****4444
+ Status: Completed

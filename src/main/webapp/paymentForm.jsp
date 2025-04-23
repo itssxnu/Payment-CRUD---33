@@ -27,7 +27,6 @@
 </head>
 <body class="bg-light">
 <div class="container my-5">
-    <!-- Payment Card -->
     <div class="card">
         <div class="card-header bg-primary text-white">
             <h3>Payment Details</h3>
@@ -43,8 +42,8 @@
                 <!-- Card Number -->
                 <div class="mb-3">
                     <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" name="cardNumber" class="form-control" id="cardNumber" required
-                           maxlength="16" placeholder="1234 5678 1234 5678">
+                    <input type="text" name="cardNumber" class="form-control" id="cardNumber" pattern="\d{16}" required
+                           maxlength="16" placeholder="1234 5678 1234 5678" title="Card number must be exactly 16 digits">
                 </div>
 
                 <!-- Expiry Date -->
@@ -61,7 +60,6 @@
                     </div>
                 </div>
 
-                <!-- Hidden fields for amount and courses -->
                 <input type="hidden" name="amount" value="<%= request.getAttribute("totalAmount") %>">
                 <%
                     List<String> selectedCourses = (List<String>) request.getAttribute("selectedCourses");
@@ -87,7 +85,6 @@
     </div>
 </div>
 
-<!-- Bootstrap JS (Optional for interactivity) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

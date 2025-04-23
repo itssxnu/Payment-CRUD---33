@@ -18,6 +18,13 @@ public class MakePaymentServlet extends HttpServlet {
 
         String name = request.getParameter("name");
         String cardNumber = request.getParameter("cardNumber");
+
+        if (cardNumber == null || !cardNumber.matches("\\d{16}")) {
+            request.setAttribute("error", "Card number must be exactly 16 digits.");
+            request.getRequestDispatcher("paymentForm.jsp").forward(request, response);
+            return;
+        }
+
         String[] courseArr = request.getParameterValues("courses");
         double amount = Double.parseDouble(request.getParameter("amount"));
 
@@ -29,6 +36,9 @@ public class MakePaymentServlet extends HttpServlet {
         request.setAttribute("name", name);
         request.setAttribute("amount", amount);
 
+        request.getSession().setAttribute("latestPayment", payment);
         request.getRequestDispatcher("paymentSuccess.jsp").forward(request, response);
+
+
     }
 }

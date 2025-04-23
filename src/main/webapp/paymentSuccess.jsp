@@ -6,6 +6,17 @@
     <title>Payment Successful</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta http-equiv="refresh" content="4;URL=home">
+
+    <script>
+        window.onload = function () {
+            // Trigger the bill download when the page loads
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = "downloadBill";
+            document.body.appendChild(iframe);
+        };
+    </script>
+
 </head>
 <body class="bg-light">
 <div class="container my-5 text-center">
