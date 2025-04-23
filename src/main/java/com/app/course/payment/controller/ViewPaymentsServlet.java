@@ -15,6 +15,7 @@ public class ViewPaymentsServlet extends HttpServlet {
             throws ServletException, IOException {
 
         List<String> payments = PaymentUtil.getAllPayments();
+
         request.setAttribute("paymentList", payments);
 
         request.getRequestDispatcher("paymentHistory.jsp").forward(request, response);
